@@ -7,7 +7,15 @@
 */
 
 function isPalindrome(str) {
-  return true;
+  var answer = true;
+  str = str.replace(/[^\w\s]|_/g, "").toLowerCase().split(" ").join("");
+  console.log(str);
+  for (var i = 0, j = str.length - 1; i < str.length / 2; i++, j--) {
+    if (str[i] != str[j]) {
+      answer = false;
+    }
+  }
+  return answer;
 }
-
+// console.log(isPalindrome("A man a plan a canal Panama"));
 module.exports = isPalindrome;
