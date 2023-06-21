@@ -11,11 +11,12 @@ function calculateTime(n) {
     var sum = 0;
 
     var startTime = new Date();
+    console.log(startTime);
     for(var i=0;i<=n;i++){
         sum += i;
     }
     var endTime = new Date();
-
+    console.log(endTime);
     return endTime-startTime;
 }
-console.log(calculateTime(10000))
+console.log("Time taken (in sec) to calculate from 1 to n is: ",calculateTime(10000000)/1000)

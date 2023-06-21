@@ -17,6 +17,38 @@
   - `npm run test-calculator`
 */
 
-class Calculator {}
+class Calculator {
+  constructor(initial_value){
+    this.result = initial_value;
+  }
+  function add(number){
+    this.result = this.result + number;
+  }
+  function subtract(number){
+    this.result = this.result - number;
+  }
+  function multiply(number){
+    this.result = this.result * number;
+  }
+  function divide(number){
+    this.result = this.result / number;
+  }
+  function clear(){
+    this.result = 0;
+  }
+  function getResult(){
+    return this.result;
+  }
+  function calculate(input){
+    if(/[A-Za-z]/.test(input))
+
+      throw new error("Error............................")
+    }
+
+    console.log(/[A-Za-z]/.test(input);
+    input = input.split();
+
+  }
+console.log(!/[0-9+*-/]/.test("5 + 34 ?"));
 
 module.exports = Calculator;
