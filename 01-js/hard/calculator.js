@@ -21,34 +21,47 @@ class Calculator {
   constructor(initial_value){
     this.result = initial_value;
   }
-  function add(number){
+  add(number){
     this.result = this.result + number;
   }
-  function subtract(number){
+  subtract(number){
     this.result = this.result - number;
   }
-  function multiply(number){
+  multiply(number){
     this.result = this.result * number;
   }
-  function divide(number){
+  divide(number){
     this.result = this.result / number;
   }
-  function clear(){
+  clear(){
     this.result = 0;
   }
-  function getResult(){
+  getResult(){
     return this.result;
   }
-  function calculate(input){
-    if(/[A-Za-z]/.test(input))
-
-      throw new error("Error............................")
+  calculate(input){
+    const regex = /[^+\-/*()\d\s]/g; // Regular expression to match non-allowed characters
+    if (regex.test(input)) {
+      throw new error('Non-allowed characters in input.....');
     }
+    // remove spaces
+    input = input.split(' ').join('');
 
-    console.log(/[A-Za-z]/.test(input);
+    console.log(/[A-Za-z]/.test(input));
     input = input.split();
 
+    stack = [];
+    // stack.push(input[0]);
+    for(let i=0;i<input.length;i++){
+
+      if(input[i]==')'){
+        while(stack[stack.length-1]!='('){
+          add(stack.pop());
+        }
+      }
+    }
   }
-console.log(!/[0-9+*-/]/.test("5 + 34 ?"));
+};
+
 
 module.exports = Calculator;
